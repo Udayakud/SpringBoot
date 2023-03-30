@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Product Register</title>
+<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+<script type="text/javascript"
+	th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/bootstrap/js/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/bootstrap/js/jquery.min.js}"></script>
+</head>
+<body>
+<!-- Menu bar starts Here -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link text-white" th:href="@{/product/register}"><h4>REGISTER</h4></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" th:href="@{/product/all}"><h4>VIEW ALL</h4></a>
+    </li>
+   
+  </ul>
+</nav>
+<!-- Menu bar ends Here -->
+<div class="container">
+	<div class="card">
+		<!-- Card Head Starts Here -->
+		<div class="card-header bg-primary text-white">				<h3>Welcome to Product Register Page</h3>
+		</div>
+		<!-- Card Head ends Here -->
+		<!-- Card Body Starts Here -->
+		<div class="card-body">
+		<form action="#" th:action="@{/product/save}" th:object="${product}"
+					method="post" class="form">
+
+		<input type="hidden" th:field="*{prodId}" />
+		<!-- one row starts here -->
+		<div class="row">
+		<div class="col-4">
+		<label for="prodName" class="control-label">Product Name</label>
+		</div>
+		<div class="col-4">
+		<input type="text" th:field="*{prodName}" class="form-control" />
+		</div>
+		</div>
+
+		<div class="row">
+		<!-- two row starts here -->
+		<div class="col-4">
+		<label for="prodCost" class="control-label">Product Cost</label>
+		</div>
+		<div class="col-4">
+		<input type="text" th:field="*{prodCost}" class="form-control" />
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-2"></div>
+		<div class="col-4">
+		<input type="submit" value="Register" class="btn btn-success" />
+		</div>
+		</div>
+		</form>
+		</div>
+		<!-- Card Body ends Here -->
+
+		<!-- Card Footer starts Here -->
+		<div class="card-footer">
+		<span th:text="${message}"></span>
+		</div>
+		<!-- Card Footer ends Here -->
+
+		</div>
+		<!-- Card ends Here -->
+
+	</div>
+	<!-- container ends Here -->
+</body>
+</html>
