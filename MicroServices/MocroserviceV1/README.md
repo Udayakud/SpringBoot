@@ -48,3 +48,29 @@ check
 (2) Response for http://localhost:8888/limits-service/default
 
 (3) Response for http://localhost:8888/limits-service/dev
+
+For Remaining services
+
+for tax details service
+
+URL:-- http://localhost:8000/tax-details/for/16
+
+{
+"id": 1000,
+"for": 0,
+"taxmultiple": 30,
+"environment": "8000"
+}
+
+for tax-caluclation-service
+
+URL :--http://localhost:8100/tax-caluclation/for/16/amount/17
+
+{
+id:"1000",
+"for":16,
+"taxmultiple":30,
+"amount":17,
+"totaltaxcaluclated": 17\*0.30,
+"environment":"8000"
+}
